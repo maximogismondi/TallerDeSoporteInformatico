@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <link rel="stylesheet" type="text/css" href="../static/css/inicio.css">
     <meta charset="utf-8" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
-    <title>Epico</title>
+    <link rel="stylesheet" type="text/css" href="css/inicio.css">
+    <title>CSV & JSON</title>
     <script
       src="https://code.jquery.com/jquery-3.1.1.js"
       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -16,6 +16,7 @@
   </head>
 
   <body>
+  <div>
     <button id="botonCsv" onclick="mostrarArchivoCsv()">
       CSV
     </button>
@@ -23,6 +24,7 @@
     <button id="botonJson" onclick="mostrarArchivoJson()">
       JSON
     </button>
+  </div>
     <table id="table">
     </table>
 
@@ -39,17 +41,25 @@
               const tabla = document.createElement("table");
               tabla.id = "table";
 
-              for (i of json["cantidadTotalDeOrdenesDeCompra"]) {
-                const fila = document.createElement("tr");
+              var primera = true;
+
+              for (i of json["Testeos"]) {
+              const fila = document.createElement("tr");
 
                 let myMap = new Map(Object.entries(i));
 
                 for (const value of myMap.values()){
-                  const celda = document.createElement("td");
+                  var celda;
+                  if(primera){
+                    celda = document.createElement("th");
+                  } else {
+                    celda = document.createElement("td");
+                  }
                   celda.appendChild(document.createTextNode(value));
                   fila.appendChild(celda);
                 }
 
+                primera = false;
                 tabla.appendChild(fila);
               }
               body.appendChild(tabla);
@@ -73,6 +83,8 @@
               const tabla = document.createElement("table");
               tabla.id = "table";
 
+              var primera = true;
+
               for (i of json["municipios"]) {
                 const fila = document.createElement("tr");
 
@@ -84,19 +96,30 @@
                     let myMap2 = new Map(Object.entries(value));
                       
                     for (const values of myMap2.values()){
-                      const celda = document.createElement("td");
+                      var celda;
+                      if(primera){
+                        celda = document.createElement("th");
+                      } else {
+                        celda = document.createElement("td");
+                      }
                       celda.appendChild(document.createTextNode(values));
                       fila.appendChild(celda);
                     }
 
                   } else {
-                    const celda = document.createElement("td");
+                    var celda;
+                    if(primera){
+                      celda = document.createElement("th");
+                    } else {
+                      celda = document.createElement("td");
+                    }
                     celda.appendChild(document.createTextNode(value));
                     fila.appendChild(celda);
                   }
                 }
 
                 tabla.appendChild(fila);
+                primera = false;
               }
               body.appendChild(tabla);
             },

@@ -21,20 +21,20 @@ public class ManejadorDeArchivos {
 
     public ManejadorDeArchivos() {
         this.ubicacionArchivo = "src/main/resources/files/";
-        this.separador = ';';
+        this.separador = ',';
     }
 
     public CSVParser formatearSeparador(){
-        CSVParserBuilder puntoYcomaBuilder = new CSVParserBuilder();
-        puntoYcomaBuilder = puntoYcomaBuilder.withSeparator(separador);
-        CSVParser parser = puntoYcomaBuilder.build();
+        CSVParserBuilder comaBuilder = new CSVParserBuilder();
+        comaBuilder = comaBuilder.withSeparator(separador);
+        CSVParser parser = comaBuilder.build();
         return parser;
     }
 
-    public FileReader obtenerArchivo(){
+    public FileReader obtenerArchivoCSV(){
         FileReader reader = null;
         try {
-            reader = new FileReader(ubicacionArchivo + "recaudacion-impositiva.csv");
+            reader = new FileReader(ubicacionArchivo + "dataset_testeo_turismo.csv");
         } catch (FileNotFoundException e) {
             String mensaje = "Archivo no encontrado, verifique el nombre y/o la ubicaión del mismo";
             System.out.println(mensaje);
@@ -42,6 +42,7 @@ public class ManejadorDeArchivos {
         }
         return reader;
     }
+
     public FileReader obtenerArchivoJSON(){
         FileReader reader = null;
         try {
@@ -55,7 +56,7 @@ public class ManejadorDeArchivos {
     }
 
     public CSVReader obtenerArchivoFormateado(){
-        FileReader fileReader = this.obtenerArchivo();
+        FileReader fileReader = this.obtenerArchivoCSV();
         CSVReaderBuilder readerBuilder = new CSVReaderBuilder(fileReader);
         CSVParser separadorFormateado = this.formatearSeparador();
         readerBuilder = readerBuilder.withCSVParser(separadorFormateado);
@@ -98,20 +99,5 @@ public class ManejadorDeArchivos {
         Iterator<String[]> iterador = reader.iterator();
         return iterador;
     }
-
-    public void imprimirDatosConEspacios() throws FileNotFoundException {
-
-        CSVReader reader = this.obtenerArchivoFormateado();
-        Iterator<String[]> iterador = reader.iterator();
-
-        while (iterador.hasNext()){
-            String[] fila = iterador.next();
-            String filaInfo = fila[0] + " " + fila[1] + " " + fila[2] + " " + fila[3] + " " + fila[5];
-            System.out.println(filaInfo);
-
-        }
-
-    }
-
 
 }

@@ -33,51 +33,39 @@ public class Controlador {
     @RequestMapping(value = "/datos/csv",method = RequestMethod.GET)
     public ResponseEntity<Object> enviarDatosCSV(){
         HashMap<String,Object> valores = new HashMap<>();
-        valores=obtenerInformacionSolicitada();
+        valores.put("Testeos",obtenerTesteos());
         return new ResponseEntity<>(valores,HttpStatus.OK);
     }
 
     @RequestMapping(value = "/datos/json",method = RequestMethod.GET)
-    public ResponseEntity<Object> enviarDatosJson(){/*RELLENAR*/
+    public ResponseEntity<Object> enviarDatosJson(){
         return new ResponseEntity<>(this.archivoCSV.obtenerArchivoJson(),HttpStatus.OK);
     }
 
-    public ArrayList<OrdenDeCompra> obtenerListaDeOrdenesDeCompra(){
+    public ArrayList<Testeo> obtenerTesteos(){
 
-        ArrayList<OrdenDeCompra> sociosList= new ArrayList<>();
+        ArrayList<Testeo> listaTesteos = new ArrayList<>();
         Iterator<String[]> iterador = archivoCSV.obtenerIterador();
 
         while (iterador.hasNext()){
 
             String[] fila = iterador.next();
 
-             String fecha=fila[0];
-             String numero_oc=fila[1];
-             String provedorfila=fila[2];
-             String importenEnArs=fila[3];
-             String objeto=fila[4];
-             String tipoDeProcedimiento=fila[5];
+            String fecha_muestra = fila[0];
+            String tipo = fila[1];
+            String dispositivo = fila[2];
+            String genero = fila[3];
+            String grupo_etario = fila[4];
+            String n = fila[5];
 
 
-             OrdenDeCompra ordenDeCompra= new OrdenDeCompra(fecha,numero_oc,provedorfila,importenEnArs,objeto,tipoDeProcedimiento);
+            Testeo testeo= new Testeo(fecha_muestra,tipo,dispositivo,genero,grupo_etario,n);
 
-
-            sociosList.add(ordenDeCompra);
+            listaTesteos.add(testeo);
 
         }
 
-        return sociosList;
+        return listaTesteos;
     }
-
-
-    public HashMap<String,Object> obtenerInformacionSolicitada(){
-
-        HashMap<String,Object> informacion = new HashMap<>();
-
-        informacion.put("cantidadTotalDeOrdenesDeCompra",this.obtenerListaDeOrdenesDeCompra());
-
-        return informacion;
-    }
-
 }
 

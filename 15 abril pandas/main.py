@@ -29,5 +29,5 @@ print(csv3.iloc[[1,5,12,36]])
 print(list(csv3.columns))
 
 #10
-
 print(csv3['FECHA_MUESTRA'])
+

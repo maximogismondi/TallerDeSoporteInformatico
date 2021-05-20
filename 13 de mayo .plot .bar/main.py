@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt1
 import matplotlib.pyplot as plt2
+import matplotlib.pyplot as plt3
+import matplotlib.pyplot as plt4
 
 csv = pd.read_csv("dataset_testeo_turismo.csv")
 x1 = csv["GRUPO_ETARIO"].unique()
@@ -18,6 +20,13 @@ plt1.title('Testeados según grupo etario')
 plt1.xlabel('Grupos etarios')
 plt1.ylabel('Cantidad de testeados')
 plt1.show()
+
+plt3.bar(x1,y1)
+plt3.title('Testeados según grupo etario')
+plt3.xlabel('Grupos etarios')
+plt3.ylabel('Cantidad de testeados')
+plt3.show()
+
 #1. Llegamos a la conclusion de que la cantidad de testeos crece respecto a la
 # edad que tengan las personas
 #2. Seria conveniente saber cuantas veces se realizo el testeo a la misma persona
@@ -26,8 +35,17 @@ plt1.show()
 
 #grafico 2
 plt2.rcParams.update({'font.size': 7})
-plt2.bar(x2,y2)
+plt2.plot(x2,y2)
 plt2.title('Testeados según ubicación', fontsize = 10)
 plt2.xlabel('Ubicaiones', fontsize = 10)
 plt2.ylabel('Cantidad de testeados', fontsize = 10)
 plt2.show()
+
+plt4.rcParams.update({'font.size': 7})
+plt4.bar(x2,y2)
+plt4.title('Testeados según ubicación', fontsize = 10)
+plt4.xlabel('Ubicaiones', fontsize = 10)
+plt4.ylabel('Cantidad de testeados', fontsize = 10)
+plt4.show()
+
+#markdown

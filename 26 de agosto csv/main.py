@@ -1,10 +1,13 @@
-#%%
-
 import pandas as pd
+pd.options.mode.chained_assignment = None 
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt1
+import matplotlib.pyplot as plt2
+import matplotlib.pyplot as plt3
+import matplotlib.pyplot as plt4
+import matplotlib.pyplot as plt5
 
-csv = pd.read_csv("./llamados_107_covid.csv")
+csv = pd.read_csv("llamados_107_covid.csv")
 for i in range(len(csv["FECHA"])):
     csv["FECHA"][i] = csv["FECHA"][i][:-9]
 
@@ -15,11 +18,11 @@ for fecha in csv["FECHA"]:
 for i in range(len(csv["COVID_LLAMADOS"])):
     mesesLlamados[csv["FECHA"][i][2:]] += csv["COVID_LLAMADOS"][i]
 
-plt.bar(mesesLlamados.keys(),mesesLlamados.values())
-plt.title('¿Qué mes se llamo más?')
-plt.ylabel('Llamados')
-plt.xticks(rotation=90)
-plt.show()
+plt1.bar(mesesLlamados.keys(),mesesLlamados.values())
+plt1.title('¿Qué mes se llamo más?')
+plt1.ylabel('Llamados')
+plt1.xticks(rotation=90)
+plt1.show()
 
 #mes con mas sospechosos en funcion llamados
 mesesSospechosos = {}
@@ -29,11 +32,11 @@ for fecha in csv["FECHA"]:
 for i in range(len(csv["CASOS_SOSPECHOSOS"])):
     mesesSospechosos[csv["FECHA"][i][2:]] += csv["CASOS_SOSPECHOSOS"][i]
 
-plt.bar(mesesSospechosos.keys(),mesesSospechosos.values())
-plt.title('¿Qué mes tuvo más sopechosos?')
-plt.ylabel('Sospechosos')
-plt.xticks(rotation=90)
-plt.show()
+plt2.bar(mesesSospechosos.keys(),mesesSospechosos.values())
+plt2.title('¿Qué mes tuvo más sopechosos?')
+plt2.ylabel('Sospechosos')
+plt2.xticks(rotation=90)
+plt2.show()
 
 #porcentaje sopechosos en funcion a los llamados por mes 
 mesesLlamadosSospechosos = {}
@@ -52,11 +55,11 @@ for fecha in csv["FECHA"]:
 for key in mesesLlamadosSospechosos.keys():
     mesesPorcentajeSospechosos[key] = mesesLlamadosSospechosos[key][0]/mesesLlamadosSospechosos[key][1]*100
 
-plt.plot(mesesPorcentajeSospechosos.keys(),mesesPorcentajeSospechosos.values())
-plt.title('¿Qué mes tuvo más porcentaje de sospechosos?')
-plt.ylabel('Porcentaje')
-plt.xticks(rotation=90)
-plt.show()
+plt3.plot(mesesPorcentajeSospechosos.keys(), mesesPorcentajeSospechosos.values())
+plt3.title('¿Qué mes tuvo más porcentaje de sospechosos?')
+plt3.ylabel('Porcentaje')
+plt3.xticks(rotation=90)
+plt3.show()
 
 #mes con mas descartados en funcion llamados
 
@@ -76,11 +79,11 @@ for fecha in csv["FECHA"]:
 for key in mesesLlamadosDescartados.keys():
     mesesPorcentajeDescartados[key] = mesesLlamadosDescartados[key][0]/mesesLlamadosDescartados[key][1]*100
 
-plt.plot(mesesPorcentajeDescartados.keys(),mesesPorcentajeDescartados.values())
-plt.title('¿Qué mes tuvo más porcentaje de descartados?')
-plt.ylabel('Porcentaje')
-plt.xticks(rotation=90)
-plt.show()
+plt4.plot(mesesPorcentajeDescartados.keys(),mesesPorcentajeDescartados.values())
+plt4.title('¿Qué mes tuvo más porcentaje de descartados?')
+plt4.ylabel('Porcentaje')
+plt4.xticks(rotation=90)
+plt4.show()
 
 #mes con mas transportados + derivados en funcion llamados
 
@@ -100,9 +103,8 @@ for fecha in csv["FECHA"]:
 for key in mesesLlamadosDescartados.keys():
     mesesPorcentajeTratados[key] = mesesLlamadosTratados[key][0]/mesesLlamadosTratados[key][1]*100
 
-plt.plot(mesesPorcentajeTratados.keys(),mesesPorcentajeTratados.values())
-plt.title('¿Qué mes tuvo más porcentaje de tratados (transladados  + derivados) ?')
-plt.ylabel('Porcentaje')
-plt.xticks(rotation=90)
-plt.show()
-# %%
+plt5.plot(mesesPorcentajeTratados.keys(),mesesPorcentajeTratados.values())
+plt5.title('¿Qué mes tuvo más porcentaje de tratados (transladados  + derivados) ?')
+plt5.ylabel('Porcentaje')
+plt5.xticks(rotation=90)
+plt5.show()

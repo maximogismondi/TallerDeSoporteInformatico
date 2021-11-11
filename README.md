@@ -17,4 +17,4 @@
  - [14 de Octubre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/14%20de%20Octubre)
  - [21 de Octubre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/21%20de%20Octubre)
  - [28 de Octubre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/28%20de%20Octubre)
- - [11 de Noviembre]
+ - [11 de Noviembre]()

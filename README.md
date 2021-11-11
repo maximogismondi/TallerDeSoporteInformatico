@@ -10,11 +10,11 @@
 
 ## [2º Cuatrimestre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre)
 
- - [12-19 de Agosto](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/12%20-%2019%20de%20Agosto)
+ - [12 - 19 de Agosto](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/12%20-%2019%20de%20Agosto)
  - [26 de Agosto](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/26%20de%20Agosto)
  - [16 de Septiembre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/16%20de%20Septiembre)
  - [30 de Septiembre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/30%20de%20Septiembre)
  - [14 de Octubre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/14%20de%20Octubre)
  - [21 de Octubre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/21%20de%20Octubre)
  - [28 de Octubre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/28%20de%20Octubre)
- - [11 de Noviembre]()
+ - [11 de Noviembre](https://github.com/MaximoGismondi/TallerDeSoporteInformatico/tree/main/2%C2%BA%20Cuatrimetre/11%20de%20Noviembre)
